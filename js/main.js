@@ -8,7 +8,7 @@ const errorMessage = document.querySelector('.errorMessage');
 
 let books = [];
 
-// Fuctions
+//Set Books function
 function setBook() {
   if (nameInpt.value === '' || authorInpt.value === '') {
     errorMessage.style.display = 'block';
@@ -23,7 +23,8 @@ function setBook() {
   }
 }
 
-const printBooks = () => {
+// Function for printing the stored bookes on the UI
+const printBooksToUI = () => {
   while (booksContainer.firstChild) {
     booksContainer.removeChild(booksContainer.firstChild);
   }
@@ -53,7 +54,7 @@ const removeBook = (el) => {
 
     const newBooks = books.filter((item) => item.id !== bookId);
     books = newBooks;
-    printBooks();
+    printBooksToUI();
   }
 };
 
@@ -61,7 +62,7 @@ const removeBook = (el) => {
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   setBook();
-  printBooks();
+  printBooksToUI();
   bookForm.reset();
 });
 
@@ -72,5 +73,5 @@ booksContainer.addEventListener('click', (el) => {
 document.addEventListener('DOMContentLoaded', () => {
   const data = JSON.parse(localStorage.getItem('books')) || [];
   books = data;
-  printBooks();
+  printBooksToUI();
 });
