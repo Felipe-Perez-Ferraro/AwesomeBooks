@@ -53,6 +53,10 @@ body {
   letter-spacing: 1px;
 }
 
+.removeBook:hover {
+  background-color: #c52525;
+}
+
 .form__container {
   padding-top: 60px;
   max-width: 900px;
@@ -83,13 +87,16 @@ input {
   background-color: #233142;
   color: #e3e3e3;
   font-size: 16px;
+  font-weight: 600;
 }
 
 input::placeholder {
   color: #e3e3e3;
+  font-weight: 600;
 }
 
 .submitBtn {
+  cursor: pointer;
   padding: 10px 24px;
   border-radius: 8px;
   border: 1px solid #e3e3e3;
@@ -98,6 +105,11 @@ input::placeholder {
   color: #e3e3e3;
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.submitBtn:hover {
+  background-color: #215c41;
 }
 
 .errorMessage {
