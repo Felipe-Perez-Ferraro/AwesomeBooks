@@ -8,7 +8,7 @@ const errorMessage = document.querySelector('.errorMessage');
 
 let books = [];
 
-//Set Books function
+// Set Books function
 function setBook() {
   if (nameInpt.value === '' || authorInpt.value === '') {
     errorMessage.style.display = 'block';
