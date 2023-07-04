@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Awesome Books</title>
+</head>
+<body>
+    <h1 class="books__title">Awesome Books</h1>
+    <h2 class="books__subtitle">All awesome books</h2>
+    <div class="books__container" id="booksContainer">
+        <h5 class="message">There isn't any book yet...</h5>
+    </div>
+
+    <div class="form__container"> 
+        <h2 class="books__subtitle">Add a new book</h2>
+        <form id="bookForm" action="">
+            <input id="nameInpt" type="text" name="title" id="title" placeholder="Title..." required>
+            <input id="authorInpt" type="text" name="author" id="author" placeholder="Author..." required> 
+            <button class="submitBtn" id="submitBtn" type="submit">Add</button>
+        </form>
+    </div>
+
+    <div class="errorMessage">
+        <h2 class="errorMessage__title">Please complete all the forms to set the book!!</h2>
+    </div>
+
+    <script src="./js/main.js"></script> 
+</body>
+</html>
