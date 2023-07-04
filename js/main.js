@@ -61,7 +61,19 @@ const printBooksToUI = () => {
 };
 
 // Listeners
+submitBtn.addEventListener("click", (ev)=>{
+  ev.preventDefault()
+  const aBook = new Books(books.length,nameInpt.value,authorInpt.value)
+  aBook.addBook()
+  printBooksToUI()
+  bookForm.reset()
+ })
 
+ booksContainer.addEventListener("click", (el)=>{
+  const rBook = new Books(books.length,nameInpt.value,authorInpt.value);
+  rBook.removeBook(el)
+ })
+ 
 document.addEventListener('DOMContentLoaded', () => {
   const data = JSON.parse(localStorage.getItem('books')) || [];
   books = data;
