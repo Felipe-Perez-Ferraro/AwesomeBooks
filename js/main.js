@@ -8,33 +8,6 @@ const errorMessage = document.querySelector('.errorMessage');
 
 let books = [];
 
-class Books {
-  constructor(id, title, author) {
-    this.id = id,
-    this.title = title,
-    this.author = author
-  }
-  
-  addBook() {
-    if (nameInpt.value === '' || authorInpt.value === '') {
-      errorMessage.style.display = 'block';
-    } else {
-      const newBook = new Books(books.length, nameInpt.value, authorInpt.value);
-      books = [...books, newBook]
-      errorMessage.style.display = 'none';
-    }
-  }
-
-  removeBook(el) {
-    if (el.target.classList.contains('removeBook')) {
-      const bookId = Number(el.target.getAttribute('data-id'));
-      const newBooks = books.filter((item) => item.id !== bookId);
-      books = newBooks;
-      printBooksToUI();
-    }
-  }
-}
-
 // Function for printing the stored bookes on the UI
 const printBooksToUI = () => {
   while (booksContainer.firstChild) {
@@ -60,20 +33,47 @@ const printBooksToUI = () => {
   localStorage.setItem('books', JSON.stringify(books));
 };
 
-// Listeners
-submitBtn.addEventListener("click", (ev)=>{
-  ev.preventDefault()
-  const aBook = new Books(books.length,nameInpt.value,authorInpt.value)
-  aBook.addBook()
-  printBooksToUI()
-  bookForm.reset()
- })
+class Books {
+  constructor(id, title, author) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+  }
 
- booksContainer.addEventListener("click", (el)=>{
-  const rBook = new Books(books.length,nameInpt.value,authorInpt.value);
-  rBook.removeBook(el)
- })
- 
+  addBook() {
+    if (nameInpt.value === '' || authorInpt.value === '') {
+      errorMessage.style.display = 'block';
+    } else {
+      const newBook = new Books(books.length, nameInpt.value, authorInpt.value);
+      books = [...books, newBook];
+      errorMessage.style.display = 'none';
+    }
+  }
+
+  removeBook(el) {
+    if (el.target.classList.contains('removeBook')) {
+      const bookId = Number(el.target.getAttribute('data-id'));
+      const newBooks = books.filter((item) => item.id !== bookId);
+      books = newBooks;
+      printBooksToUI();
+    }
+  }
+}
+
+// Listeners
+submitBtn.addEventListener('click', (ev) => {
+  ev.preventDefault();
+  const aBook = new Books(books.length, nameInpt.value, authorInpt.value);
+  aBook.addBook();
+  printBooksToUI();
+  bookForm.reset();
+});
+
+booksContainer.addEventListener('click', (el) => {
+  const rBook = new Books(books.length, nameInpt.value, authorInpt.value);
+  rBook.removeBook(el);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const data = JSON.parse(localStorage.getItem('books')) || [];
   books = data;
