@@ -331,4 +331,12 @@ h5 {
   .contact__section__list__container {
     margin-left: 160px;
   }
+
+  .footer__container {
+    max-width:900px;
+  }
+
+  .footer__section__title {
+    font-size: 22px;
+  }
 }
