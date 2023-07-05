@@ -113,7 +113,7 @@ body {
   background-color: #c52525;
 }
 
-/* Add new Section*/ 
+/* Add new Section */
 .addNew__form__container {
   padding-top: 100px;
   max-width: 350px;
@@ -242,11 +242,11 @@ h5 {
   .header__section__container {
     max-width: 700px;
   }
-  
+
   .fa-bars {
     display: none;
   }
-  
+
   .header__navbar__list__container {
     position: initial;
     top: 0;
@@ -255,20 +255,20 @@ h5 {
     padding: initial;
     flex-direction: row;
   }
-  
+
   .header__navbar__list__link {
     font-size: 18px;
-  } 
+  }
 
   /* List Section */
   .list__section__books__container {
     max-width: 700px;
   }
-  
+
   .list__section__book__features {
     font-size: 22px;
   }
-  
+
   .removeBook {
     font-size: 14px;
   }
@@ -282,7 +282,7 @@ h5 {
     font-size: 18px;
     width: 100%;
   }
-  
+
   .errorMessage {
     max-width: 700px;
   }
@@ -311,12 +311,12 @@ h5 {
   .header__section__container {
     max-width: 900px;
   }
-  
+
   /* List Section */
   .list__section__books__container {
     max-width: 900px;
   }
-  
+
   /* Add New Section */
   .addNew__form__container {
     max-width: 500px;
