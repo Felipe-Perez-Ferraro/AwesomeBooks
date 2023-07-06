@@ -17,9 +17,9 @@ const printBooksToUI = () => {
   if (books.length > 0) {
     books.forEach((book) => {
       const div = document.createElement('div');
-      div.classList.add('book__content');
+      div.classList.add('list__section__book__content');
       div.innerHTML = `
-            <h3 class="book__features">"${book.title}" by ${book.author}</h3>
+            <h3 class="list__section__book__features">"${book.title}" by ${book.author}</h3>
             <button data-id="${book.id}" class="removeBook">Remove</button>
             `;
       booksContainer.appendChild(div);
@@ -31,6 +31,13 @@ const printBooksToUI = () => {
   }
 
   localStorage.setItem('books', JSON.stringify(books));
+
+  if (books.length >= 7) {
+    booksContainer.style.height = 'auto';
+    booksContainer.style.marginBottom = '30px';
+  } else {
+    booksContainer.style.height = 'calc(100vh - 241px)';
+  }
 };
 
 class Books {
