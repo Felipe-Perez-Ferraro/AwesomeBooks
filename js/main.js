@@ -31,6 +31,13 @@ const printBooksToUI = () => {
   }
 
   localStorage.setItem('books', JSON.stringify(books));
+
+  if (books.length >= 7) {
+    booksContainer.style.height = 'auto';
+    booksContainer.style.marginBottom = '30px';
+  } else {
+    booksContainer.style.height = 'calc(100vh - 241px)';
+  }
 };
 
 class Books {

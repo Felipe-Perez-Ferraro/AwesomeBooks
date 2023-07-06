@@ -1,6 +1,9 @@
 // Navbar
 const menuOpen = document.getElementById('menuOpen');
 const links = document.querySelectorAll('.header__navbar__list__item a');
+const list = document.getElementById('List');
+const addNew = document.getElementById('AddNew');
+const contact = document.getElementById('Contact');
 
 const toggleMenu = () => {
   const navbar = document.querySelector('.header__navbar__list__container');
@@ -22,6 +25,26 @@ const toggleMenu = () => {
 };
 menuOpen.addEventListener('click', toggleMenu);
 
+list.style.display = 'block';
+addNew.style.display = 'none';
+contact.style.display = 'none';
+
 links.forEach((e) => {
-  e.addEventListener('click', toggleMenu);
+  e.addEventListener('click', (el) => {
+    toggleMenu();
+    el.preventDefault();
+    if (el.target.classList.contains('list')) {
+      list.style.display = 'block';
+      addNew.style.display = 'none';
+      contact.style.display = 'none';
+    } else if (el.target.classList.contains('add')) {
+      list.style.display = 'none';
+      addNew.style.display = 'block';
+      contact.style.display = 'none';
+    } else if (el.target.classList.contains('contact')) {
+      list.style.display = 'none';
+      addNew.style.display = 'none';
+      contact.style.display = 'block';
+    }
+  });
 });
